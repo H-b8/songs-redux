@@ -27,7 +27,7 @@ class SongList extends React.Component {
   }
 
   render() {
-    return <div>Song List</div>
+    return <div className="ui divided list">{this.renderList()}</div>
 
     // 3.1)
     //delete the return above and use the one below after following Step 3
@@ -43,7 +43,7 @@ class SongList extends React.Component {
 //                  and the component can then use our store's state
 
 const mapStateToProps = (state) => {
-  return null;
+  return { song: state.songs };
 };
 
 export default connect(mapStateToProps, { selectSong })(SongList);
